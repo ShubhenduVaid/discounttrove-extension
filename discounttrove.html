@@ -4,7 +4,7 @@
     <title>Discounttrove</title>
     <style>
         html, body {
-          min-width: 200px;
+          min-width: 220px;
           min-height: 33px;
         }
 
@@ -13,11 +13,14 @@
         }
 
         b {
+          display: block;
+          width: 100%;
           font-size: large;
+          text-align: center;
         }
 
         button {
-          background-color: #4CAF50;
+          background-color: rgba(3, 111, 227);
           border: none;
           color: white;
           padding: 12px 24px;
@@ -28,18 +31,29 @@
           margin: 4px 2px;
           cursor: pointer;
           border-radius: 8px;
-          box-shadow: 2px 2px 4px rgba(30, 42, 138, 0.3);
+          box-shadow: 2px 2px 4px rgba(3, 42, 138, 0.3);
       }
 
       #imgDiv {
         height: auto;
+        margin: 0 auto;
+        width: 200px;
+        padding: 8px;
       }
     </style>
   </head>
   <body>
     <b>Searching...</b>
-    <div id="imgDiv"></div>
     <div id="btnDiv"></div>
+    <div id="imgDiv"></div>
     <script src="scripts/discounttrove.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMW0W0CB90"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QMW0W0CB90');
+    </script>
   </body>
 </html>

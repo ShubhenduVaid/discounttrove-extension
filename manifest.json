@@ -1,10 +1,10 @@
 {
-  "name": "Cheapest Product Finder For Amazon",
+  "name": "Best Deal on Amazon",
   "description": "An extension to find cheapest products for Amazon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 3,
   "action": {
-    "default_title": "Click Me",
+    "default_title": "discounttrove",
     "default_popup": "discounttrove.html",
     "default_icon": "discounttrove.png"
   },

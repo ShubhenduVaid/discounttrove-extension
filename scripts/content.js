@@ -2,6 +2,9 @@ var imgWrapper =
   document.getElementById("imgTagWrapperId") ||
   document.getElementsByClassName("imgTagWrapper");
 
+var priceWrapper = document.querySelector(".a-price > .a-offscreen");
+priceWrapper = priceWrapper.textContent;
+
 if (imgWrapper.length > 1) {
   for (let index = 0; index < imgWrapper.length; index++) {
     if (imgWrapper[index].innerHTML.includes("<img")) {
@@ -30,7 +33,7 @@ try {
     // sends message to content script
     const responseBackground = chrome.runtime.sendMessage({
       type: "popup",
-      message: firstImg,
+      message: { img: firstImg, price: priceWrapper },
     });
 
     console.log("content success", responseBackground);

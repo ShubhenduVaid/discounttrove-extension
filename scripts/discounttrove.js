@@ -22,22 +22,24 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       const imgDiv = document.getElementById("imgDiv");
       if (imgDiv) {
         const img = document.createElement("img");
-        img.src = request.message;
+        img.src = request.message.img;
         img.alt = "searched";
-        img.width = 100;
+        img.width = 200;
         imgDiv.appendChild(img);
         setTimeout(() => {
           const bTag = document.getElementsByTagName("b");
-          bTag[0].innerText = "Search Completed";
+          bTag[0].innerText = `Product Price ${request.message.price}`;
 
           const btnDiv = document.getElementById("btnDiv");
           const button = document.createElement("button");
-          button.textContent = "Check Cheaper Alternative";
+          button.textContent = "Get Cheaper Alternatives";
+
+          var url = `https://discounttrove.co.uk?img=${
+            request.message.img
+          }&price=${encodeURIComponent(request.message.price)}`;
+
           button.addEventListener("click", () => {
-            window.open(
-              `https://discounttrove.co.uk?img=${request.message}`,
-              "_blank"
-            );
+            window.open(url, "_blank");
           });
           btnDiv.appendChild(button);
         }, 100);
